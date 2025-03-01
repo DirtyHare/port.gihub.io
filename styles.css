@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Шапка на весь экран */
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    animation: fadeIn 2s ease-in;
+}
+
+header h1 {
+    font-size: 4em;
+    text-align: center;
+    margin: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Секция обо мне */
+#about {
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+#about.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Секция работ */
+#portfolio {
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+#portfolio h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5em;
+    background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #ff6b6b);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientShift 3s infinite linear;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+.project {
+    width: 300px;
+    padding: 20px;
+    background: #2c2c2c;
+    border-radius: 10px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.project.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.project:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+}
+
+.project img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Стили для ссылок */
+.project a {
+    color: #ff6b6b; /* Цвет ссылок, например, красный из градиента */
+    text-decoration: none; /* Убираем подчёркивание */
+    transition: color 0.3s ease;
+}
+
+.project a:hover {
+    color: #4ecdc4; /* Цвет при наведении, например, бирюзовый из градиента */
+}
+
+/* Дополнительная секция */
+#extra {
+    padding: 50px;
+    text-align: center;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    animation: slideUp 1s ease-in;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100px); }
+    to { transform: translateY(0); }
+}
